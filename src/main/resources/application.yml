@@ -1,0 +1,31 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jwtvue?serverTimezone=Asia/Seoul
+    username: user
+    password: 4160
+
+  jpa:
+    hibernate:
+      ddl-auto: update # create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      show-sql: true
+
+logging:
+  level:
+    com.study.jwt_vue: debug
+
+jwt:
+  header: Authorization
+  token-validity-in-seconds: 86400 # 60*1000(1분)*60(1시간)*24
+  secret: "아니왜자꾸비밀키를만들라는거야진짜아니왜자꾸비밀키를만들라는거야진짜"
